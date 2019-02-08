@@ -1,0 +1,190 @@
+body, div, span, p, form, input, select, textarea, button, fieldset,
+table, th, td,
+ul, ol, li,
+dl, dt, dd,
+h1, h2, h3,
+i {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+header, footer, main, section, aside, article {
+  display: block;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  height: 100%;
+  border: none;
+  outline: none;
+  color:#333333;
+  font-size:0.24rem;
+
+  &::placeholder{
+    color: #999999;
+    font-size:0.24rem;
+  }
+}
+
+button {
+  border:none;
+  color: white;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: #333333;
+  background-color: #f6f6f6;
+}
+
+/**
+  公共
+ */
+@mixin width-limit{
+  min-width: 320px;
+  max-width: 768px;
+}
+
+//容器
+.app-page{
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  @include width-limit;
+  top:0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-top:0.96rem;
+  padding-bottom:0.96rem;
+  background: white;
+
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+//一行文字
+@mixin text-oneline {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+//不兼容IE
+@mixin text-twoline {
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 6px;
+    content: '...';
+    background: white;
+  }
+}
+
+//圆
+@mixin round($width) {
+  width: $width;
+  height: $width;
+  border-radius: $width/2;
+}
+
+//边框
+$border-color: #cccccc !default;
+
+@mixin border(
+  $location:all,
+  $width:1px,
+  $style:solid,
+  $color:$border-color) {
+
+  @if $location==top {
+    border-top: $width $style $color;
+  } @else if $location==left {
+    border-left: $width $style $color;
+  } @else if $location==right {
+    border-right: $width $style $color;
+  } @else if $location==bottom {
+    border-bottom: $width $style $color;
+  } @else if $location==none {
+    border: none;
+  } @else {
+    border: $width $style $color;
+  }
+}
+
+/**
+    自适应
+    768px以下为平板、手机设备。768px以上为PC设备依然font-size:100px
+ */
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 100px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 75px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 65px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 58px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 50px;
+  }
+}

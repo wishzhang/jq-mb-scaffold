@@ -1,0 +1,318 @@
+@import "../plugin";
+
+@media screen and(min-width: 768px) {
+  .rs-dot {
+    @include round(18px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rs-dot {
+    @include round(14px);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .rs-dot {
+    @include round(10px);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .rs-dot {
+    @include round(8px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .rs-dot {
+    @include round(8px);
+  }
+}
+
+
+section.session-box {
+  position: relative;
+  margin-top: 1.66rem;
+
+  .logo {
+    position: absolute;
+    left: calc(50% - 1.68rem / 2);
+    top: -1.18rem;
+    @include round(1.68rem);
+    background-color: #cccccc;
+    box-shadow: 0rem 0.04rem 0.083rem 0.007rem rgba(224, 25, 248, 0.18);
+  }
+
+
+  .main-box {
+    width: calc(100% - 0.24rem * 2);
+    box-shadow: 0rem 0.07rem 0.147rem 0.013rem rgba(102, 102, 102, 0.18);
+    border-radius: 0.4rem;
+    @include border;
+    margin: 0 auto;
+
+    .tabs-box {
+      display: flex;
+
+      span {
+        display: block;
+        width: 50%;
+        flex: 1;
+        @include border($location: bottom, $width: 2px);
+        height: 0.97rem;
+        line-height: 0.97rem;
+        text-align: center;
+        font-size: 0.28rem;
+        color: #333333;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .tab-active {
+        border-color: #e019f8 !important;
+      }
+
+    }
+
+    .tab-content {
+
+      .input-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 0.48rem * 2);
+        height: 0.72rem;
+        margin-top: 0.48rem;
+        background-color: #eeeeee;
+        border-radius: 0.36rem;
+
+        input {
+          width: calc(100% - 1.16rem - 1.1rem);
+          font-size: 0.26rem;
+          text-align: center;
+          color: #666666;
+          background: #eeeeee;
+        }
+
+        > div:first-child {
+          width: 1.1rem;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          img {
+            width: 0.38rem;
+            height: 0.48rem;
+            margin-right: 0.24rem;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+
+        > div:last-child {
+          width: 1.16rem;
+          padding-left: 0.24rem;
+          padding-right: 0.48rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 0.24rem;
+            height: 0.24rem;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .input-box.pwd-box {
+        > div:last-child {
+          .eyes {
+            width: 0.44rem;
+            height: 0.24rem;
+            background: url(../../img/login/close-eyes.png) no-repeat;
+            background-size: contain;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .eyes-open {
+            background: url(../../img/login/open-eyes.png) no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+
+      .check-box {
+        display: flex;
+        width: 100%;
+        padding-left: 0.48rem;
+        padding-right: 0.48rem;
+        align-items: center;
+        margin-top: 0.48rem;
+
+        > div {
+          width: 0.32rem;
+          height: 0.32rem;
+          background: #eeeeee;
+          border-radius: 0.05rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .check-selected {
+          background: url("../../img/login/check-selected.png") no-repeat;
+          background-size: contain;
+        }
+
+        > span {
+          margin-left: 0.15rem;
+          font-size: 0.22rem;
+          color: #666666;
+          letter-spacing: 0rem;
+        }
+      }
+
+      .login-btn {
+        width: calc(100% - 0.48rem * 2);
+        height: 0.72rem;
+        margin-top: 0.48rem;
+        margin-bottom: 0.48rem;
+        background-color: #cccccc;
+        border-radius: 0.36rem;
+        font-size: 0.3rem;
+      }
+
+      .qrcode-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 0.48rem * 2);
+        height: 0.72rem;
+        margin-top: 0.48rem;
+        background-color: #eeeeee;
+        border-radius: 0.36rem;
+
+        > div {
+          width: 1.1rem;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+
+        img {
+          width: 0.38rem;
+          height: 0.44rem;
+          margin-left: 0.48rem;
+        }
+
+        input {
+          width: calc(100% - 1.5rem - 1.1rem);
+          font-size: 0.26rem;
+          text-align: center;
+          color: #666666;
+          background: #eeeeee;
+        }
+
+        button {
+          width: 1.98rem;
+          height: 0.48rem;
+          line-height: 0.48rem;
+          margin-right: 0.12rem;
+          background-color: #ffa20f;
+          border-radius: 0.24rem;
+          font-size: 0.26rem;
+          color: white;
+          text-align: center;
+        }
+      }
+
+      .login-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .reg-box {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+footer {
+  .dots-box {
+    margin-top: 1.6rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    > div {
+      @extend .rs-dot;
+      background: #19f86d;
+      margin: 0 auto;
+      margin-top: 0.12rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:nth-of-type(1) {
+        opacity: 1;
+      }
+
+      &:nth-of-type(2) {
+        color: #19f86d;
+        opacity: 0.6;
+      }
+
+      &:nth-of-type(3) {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .way-box {
+    width: calc(100% - 1.2rem * 2);
+    margin: 0 auto;
+    margin-top: 0.48rem;
+
+    img:hover {
+      cursor: pointer;
+    }
+
+    > div:nth-of-type(1) {
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        width: 0.96rem;
+        height: 0.96rem;
+      }
+    }
+
+    > div:nth-of-type(2) {
+      margin-top: 0.2rem;
+
+      img {
+        width: 0.96rem;
+        height: 0.96rem;
+      }
+    }
+  }
+}

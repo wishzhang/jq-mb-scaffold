@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>商城</title>
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../css/plugin.css">
+    <link rel="stylesheet" href="../../lib/toast/jquery.toast.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_959399_j1vr847bobi.css">
+    <script src="../../lib/jquery/jquery-2.0.0.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="../../lib/toast/jquery.toast.min.js"></script>
+    <script src="../../lib/cookie/jquery.cookie.js"></script>
+    <script src="../../js/plugin.js"></script>
+</head>
+<body>
+<header class="app-header">
+    <div class="left">
+        <img src="../../img/plugin/back.png" role="button" alt="返回按钮">
+    </div>
+    <div class="center">
+        <h1>测试</h1>
+    </div>
+    <div class="right">
+    </div>
+</header>
+<div class="app-page">
+
+    <!--<div id="empty"></div>-->
+    <!--    <div id="star"></div>-->
+    <!--    <div id="search"></div>-->
+  <!--  <div id="video"></div>-->
+   <!-- <div id="send"></div>-->
+    <div id="comment"></div>
+</div>
+
+<script>
+    $(function () {
+        /*      new AppEmptyView().init({
+                  el:'#empty'
+              }).render();*/
+        /*
+                new AppStars().init({
+                    el:'#star'
+                }).render();*/
+        /*        new AppSearchBox().init({
+                    el:'#search'
+                }).render();*/
+      /*  new AppVideoList().init({
+            el: '#video',
+            data: [{
+                id: '0',
+                title: '耀眼新品，精彩揭晓——蓝莓胶囊鲜活面膜的成功蓝莓胶囊鲜活面\n' +
+                    '                    膜的成功蓝莓胶囊鲜活面膜的成功',
+                posterUrl: '//vjs.zencdn.net/v/oceans.png',
+                src: '//vjs.zencdn.net/v/oceans.mp4',
+                playNum: 1,
+                commentNum: 2,
+                praiseNum: 3,
+                itemClickEnable: true,
+                itemClick: function (params) {
+
+                },
+                praiseClickEnable: true,
+                praiseClick: function (el, tar) {
+                    if ($(el).css('color') !== '#ef4a09') {
+                        $(el).css('color', '#ef4a09');
+                        $(tar).text(this.praiseNum + 1);
+                    }
+                }
+            }]
+        }).render();*/
+/*      new AppSendBox().init({
+          el:'#send'
+      }).render();*/
+        new AppCommentList().init({
+            el:'#comment',
+            data:[
+                {
+                    id: '',
+                    avatarUrl: '../../img/plugin/test.jpeg',
+                    name: '琴无续弦',
+                    comment: '祝能吃能睡，永远快乐！',
+                    createTime: '01-01 09:09',
+                    goodNum: 3,
+                    goodClick:function (el,tar) {
+
+                    }
+                },
+                {
+                    id: '',
+                    avatarUrl: '../../img/plugin/test.jpeg',
+                    name: '琴无续弦',
+                    comment: '祝能吃能睡，永远快乐！',
+                    createTime: '01-01 09:09',
+                    goodNum: 3,
+                    goodClick:function (el,tar) {
+
+                    }
+                }
+            ]
+        }).render();
+    });
+</script>
+</body>
+</html>
